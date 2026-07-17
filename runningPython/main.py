@@ -1,10 +1,16 @@
+filepath = "books/frankenstein.txt"
+
 def get_book_text(filepath: str):
-    with open(filepath) as f:
-        file_contents = f.read()
-    print(file_contents)
-    return file_contents
+    with open(filepath) as f: 
+        text_book = f.read()
+        return text_book
 
-filepath = "bookBot/runningPython/books/frankenstein.txt"
+def count_nums(file_contents: str) -> int:
+    return len(file_contents.split())
 
-def main((get_book_text(filepath)):
-    print(get_book_text(filepath))
+def main():
+    file_contents = get_book_text(filepath)
+    num_words = count_nums(file_contents)
+    print(f"Found {num_words} total words")
+
+main()
